@@ -2,48 +2,6 @@
 
 Board AI is a simple task manager that uses artificial intelligence to create new tasks from voice commands.
 
-## 🚀 Getting Started
-
-Follow these instructions to get a copy of the project running on your local machine for development and testing purposes.
-
-### Prerequisites
-
-What you need to install the software:
-
-- Java 21
-- Gradle
-
-### Installation
-
-A step-by-step guide that tells you how to get a development environment running:
-
-1. Clone the repository
-   ```sh
-   git clone https://github.com/enacreditavel/board-ai.git
-   ```
-2. Navigate to the project directory
-   ```sh
-   cd board-ai
-   ```
-3. Install the dependencies
-   ```sh
-   mvn install
-   ```
-4. Run the application
-   ```sh
-   mvn spring-boot:run
-   ```
-
-The application will be available at `http://localhost:8080`.
-
-## 🛠️ Technologies
-
-The following technologies were used in the construction of the project:
-
-- [Spring Boot](https://spring.io/projects/spring-boot) - Web framework
-- [Spring AI](https://spring.io/projects/spring-ai) - AI library
-- [Maven](https://maven.apache.org/) - Dependency manager
-
 ## API
 
 The API allows you to create tasks in two ways:
