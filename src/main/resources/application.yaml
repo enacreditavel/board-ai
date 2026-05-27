@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: board-ai
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  ai:
+    model:
+      audio:
+        transcription: openai
+        speech: openai
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: gpt-3.5-turbo
+          response-format:
+            type: TEXT
+      audio:
+        transcription:
+          options:
+            model: whisper-1
+            language: pt
+            temperature: 0
+            response-format: text
+            prompt: "Áudio em português brasileiro.\
+            Áudio contém descrição de gastos financeiros. \
+            As frases geralmente contém: \
+              - um valor em reais (número + 'reais'); \
+              - uma ação (gastei, paguei, comprei); \
+              - um local ou estabelecimento (mercado, farmácia, restaurante, loja, etc.)."
+        speech:
+          options:
+            model: gpt-4o-mini-tts
+            voice: nova
+            speed: 1.2
+            response-format: mp3
+logging:
+  level:
+    org:
+      springframework:
+        ai: debug
